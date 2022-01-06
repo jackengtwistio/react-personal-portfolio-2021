@@ -1,17 +1,21 @@
+import { useState } from "react";
 import "./App.css";
 import Info from "./compos/info";
 import Skills from "./compos/skills";
 import Jobs from "./compos/jobs";
 import HowDid from "./compos/howdid";
-import { Py } from "./compos/skills-detail/DM";
+import { Progress } from "./compos/progress";
+
 function App() {
+  const [proCount, setProCount] = useState(0);
+  const [check, setCheck] = useState(false);
   return (
     <>
       <Info />
-      <Skills />
+      <Skills setCheck={() => setCheck((e) => !e)} />
       <Jobs />
       <HowDid />
-      <Py />
+      <Progress check={check} />
     </>
   );
 }

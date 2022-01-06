@@ -3,19 +3,23 @@ import { GridPicItem, GridPics } from "./grid";
 
 export const SkillsOuterStyled = styled.section`
   color: rgb(216, 204, 189);
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url(${({ backgroundImg }) => backgroundImg});
-
+  padding: 0.5em;
+  background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(20, 20, 20, 0.4)),
+    url(${({ backgroundImg }) => backgroundImg}) top right;
   background-size: cover;
   &:after {
-    content: " 🦄";
+    content: "<h1>Dev</h1>";
   }
 `;
 
 export const SkillListStyled = styled(GridPics)`
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 4em;
-  padding: 4em;
 `;
 
-export const SkillStyled = styled(GridPicItem)``;
+export const SkillStyled = styled(GridPicItem)`
+  &:hover {
+    border: 2px solid rgb(245, 245, 245, 0.3);
+    border-radius: 25px;
+  }
+`;
