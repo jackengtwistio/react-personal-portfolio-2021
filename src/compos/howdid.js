@@ -1,4 +1,4 @@
-import pic from "./img/pic.png";
+import pic from "./img/about-AI.jpg";
 
 export default function HowDid() {
   return (

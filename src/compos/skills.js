@@ -1,28 +1,36 @@
 import { useState } from "react";
-import Python from "./skill-detail/python";
+import { SkillsOuterStyled, SkillStyled, SkillListStyled } from "./css/skills";
+import webImg from "./img/web.jpg";
+import reactjsImg from "./img/reactjs.png";
+import nodejsImg from "./img/nodejs.png";
+import dbImg from "./img/db.jpg";
+import dmImg from "./img/dm.jpg";
+import networkingImg from "./img/networking.jpg";
+
+const correspondedImgs = {
+  "React.js": reactjsImg,
+  "Node.js": nodejsImg,
+  DB: dbImg,
+  Networking: networkingImg,
+  "Data Manipulation": dmImg,
+};
 
 function Skill(props) {
-  const [popup, setPopup] = useState(false);
+  let { title, backgroundSync, defaultBack } = props;
   return (
-    <h1
-      style={{
-        margin: 0,
-        padding: 0,
-      }}
-      className="grid-item"
-      onClick={() => setPopup(!popup)}
-      href="#"
+    <SkillStyled
+      onMouseEnter={() => backgroundSync(correspondedImgs[title])}
+      onMouseLeave={defaultBack}
+      backgroundImg={correspondedImgs[title] || webImg}
     >
-      <div className="skill grid-item">
-        {props.name}
-
-        <Python popup={popup} />
-      </div>
-    </h1>
+      <h2>{title}</h2>
+    </SkillStyled>
   );
 }
 
 export default function Skills() {
+  let [focusedBackground, setFocusedBackground] = useState(webImg);
+
   const skillLists = [
     "React.js",
     "Node.js",
@@ -30,14 +38,19 @@ export default function Skills() {
     "Networking",
     "Data Manipulation",
   ];
-  const skillsElement = skillLists.map((e) => <Skill name={e} />);
+  const skillsElements = skillLists.map((e, i) => (
+    <Skill
+      key={i}
+      backgroundSync={(e) => setFocusedBackground(e)}
+      defaultBack={() => setFocusedBackground(webImg)}
+      title={e}
+    />
+  ));
+  console.log(focusedBackground);
   return (
-    <div className="grid-skills-outer">
+    <SkillsOuterStyled backgroundImg={focusedBackground}>
       <h1>Web Dev Skillset</h1>
-      <fieldset>
-        <legend style={{ color: "white" }}>click to view details</legend>
-        <div className="grid-skills">{skillsElement}</div>
-      </fieldset>
-    </div>
+      <SkillListStyled>{skillsElements}</SkillListStyled>
+    </SkillsOuterStyled>
   );
 }

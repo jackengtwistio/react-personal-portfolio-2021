@@ -1,39 +1,12 @@
-/* * {
+* {
   text-align: center;
-} */
-body {
-  margin: 0;
-}
-
-:focus {
-  outline: 3px solid blue;
-  outline-offset: 3px;
-}
-
-img {
-  max-width: 100%;
 }
 
 .grid-item {
   background-color: rgba(185, 46, 46, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  text-align: center;
   align-items: center;
   justify-self: center;
-}
-
-.skill {
-  cursor: pointer;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/about-AI.jpg");
-  background-size: cover;
-  justify-content: center;
-  transition: transform 250ms ease-in-out;
-}
-.skill:hover {
-  transform: scale(1.1);
 }
 
 .grid-text {
@@ -41,19 +14,6 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 1em;
-}
-
-.grid-skills {
-  padding: 1em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1em;
-}
-.grid-skills-outer {
-  color: rgb(216, 204, 189);
-  background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/web.jpg");
-  /* background-color: rgba(0, 0, 0, 0.25); */
 }
 
 .popup {

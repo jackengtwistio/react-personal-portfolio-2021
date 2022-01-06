@@ -3,6 +3,7 @@ import Info from "./compos/info";
 import Skills from "./compos/skills";
 import Jobs from "./compos/jobs";
 import HowDid from "./compos/howdid";
+import { Py } from "./compos/skills-detail/DM";
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
       <Skills />
       <Jobs />
       <HowDid />
+      <Py />
     </>
   );
 }
