@@ -1,4 +1,4 @@
-import pic from "./skills-compos/img/about-AI.jpg";
+import pic from "./skillset/img/about-AI.jpg";
 
 export default function HowDid() {
   return (
