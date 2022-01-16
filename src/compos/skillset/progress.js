@@ -32,17 +32,19 @@ export default function Progress({
     return (
       <ProgressStyled progressFinished={true}>
         <HonorDivStyled>
-          <CertifClaimStyled
-            onClick={() => {
-              pdfDownload();
-            }}
-          >
+          <CertifClaimStyled>
             <span>
               {}'s name is verified. Coursera certifies their successful
               completion of Python Classes and Inheritance
             </span>
             <br />
-            <img src={certImg} alt="certification" />
+            <img
+              src={certImg}
+              alt="certification"
+              onClick={() => {
+                pdfDownload();
+              }}
+            />
             <ToggleButton />
           </CertifClaimStyled>
         </HonorDivStyled>
@@ -52,30 +54,36 @@ export default function Progress({
   if (max === value) {
     return (
       <ProgressStyled progressFinished={true}>
-        <CertifClaimStyled>
-          <p>Congratulations! you have successfully completed Jack's resume!</p>
-          <br />
-          <progress id="file" max={max} value={value} />
-          <SpinningStyled
-            onClick={async () => {
-              await pdfDownload();
-              setCertifDeclared(true);
-            }}
-          >
-            <img src={certImg} alt="certification" />
-          </SpinningStyled>
-          <i>you can declare your certification by clicking it!</i>
-          <ToggleButton />
-        </CertifClaimStyled>
+        <HonorDivStyled>
+          <CertifClaimStyled>
+            <i>
+              Congratulations! you have successfully completed Jack's resume!
+            </i>
+
+            <progress id="file" max={max} value={value} />
+            <SpinningStyled
+              onClick={async () => {
+                await pdfDownload();
+                setCertifDeclared(true);
+              }}
+            >
+              <br />
+              <br />
+              <img src={certImg} alt="certification" />
+            </SpinningStyled>
+            <i>you can declare your certification by clicking it!</i>
+          </CertifClaimStyled>
+        </HonorDivStyled>
       </ProgressStyled>
     );
   }
   return (
     <ProgressStyled>
-      <label htmlFor="file">Your progress:</label>
+      <label htmlFor="file" onClick={pdfDownload}>
+        Your progress:
+      </label>
       <br />
       <progress id="file" max={max} value={value} />
-      <ToggleButton />
     </ProgressStyled>
   );
 }

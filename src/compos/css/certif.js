@@ -54,7 +54,7 @@ export const HonorDivStyled = styled.div`
 
 export const CertifClaimStyled = styled.div`
   margin: -0.3em;
-  cursor: grab;
+
   display: grid;
   max-width: 300px;
   padding: 1em;
@@ -77,6 +77,7 @@ export const CertifClaimStyled = styled.div`
   }
   img {
     max-width: 100%;
+    cursor: grab;
   }
 `;
 
