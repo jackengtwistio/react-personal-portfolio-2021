@@ -1,11 +1,13 @@
+import React, { useState } from "react";
+
 import DM from "./details/DM";
 import N from "./details/N";
 import JS from "./details/JS";
-import React, { useState } from "react";
 import webImg from "./img/web.jpg";
 import reactjsImg from "./img/reactjs.png";
 import dmImg from "./img/dm.jpg";
 import networkingImg from "./img/networking.jpg";
+
 const { Provider, Consumer } = React.createContext();
 
 function SkillCP(props) {

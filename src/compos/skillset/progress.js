@@ -1,54 +1,81 @@
+import { useState } from "react";
 import { ProgressStyled } from "../css/progress.js";
-const axios = require("axios");
-const FormData = require("form-data");
-const fs = require("fs");
+import {
+  CertifClaimStyled,
+  SpinningStyled,
+  ToggleButtonStyled,
+  HonorDivStyled,
+} from "../css/certif";
+import certImg from "./cert/certif.jpeg";
+import pdfDownload from "./cert/pdfDownload";
 
-export default function Progress({ max, value }) {
+export default function Progress({
+  max,
+  value,
+  setCertifDeclared,
+  certifDeclared,
+}) {
+  const [close, setClose] = useState(false);
+  function ToggleButton() {
+    return (
+      <ToggleButtonStyled close={close} onClick={() => setClose(!close)} />
+    );
+  }
+  if (close) {
+    return (
+      <ProgressStyled>
+        <ToggleButton />
+      </ProgressStyled>
+    );
+  }
+  if (certifDeclared) {
+    return (
+      <ProgressStyled progressFinished={true}>
+        <HonorDivStyled>
+          <CertifClaimStyled
+            onClick={() => {
+              pdfDownload();
+            }}
+          >
+            <span>
+              {}'s name is verified. Coursera certifies their successful
+              completion of Python Classes and Inheritance
+            </span>
+            <br />
+            <img src={certImg} alt="certification" />
+            <ToggleButton />
+          </CertifClaimStyled>
+        </HonorDivStyled>
+      </ProgressStyled>
+    );
+  }
+  if (max === value) {
+    return (
+      <ProgressStyled progressFinished={true}>
+        <CertifClaimStyled>
+          <p>Congratulations! you have successfully completed Jack's resume!</p>
+          <br />
+          <progress id="file" max={max} value={value} />
+          <SpinningStyled
+            onClick={async () => {
+              await pdfDownload();
+              setCertifDeclared(true);
+            }}
+          >
+            <img src={certImg} alt="certification" />
+          </SpinningStyled>
+          <i>you can declare your certification by clicking it!</i>
+          <ToggleButton />
+        </CertifClaimStyled>
+      </ProgressStyled>
+    );
+  }
   return (
     <ProgressStyled>
       <label htmlFor="file">Your progress:</label>
-      <progress id="file" max={max} value={value}></progress>
+      <br />
+      <progress id="file" max={max} value={value} />
+      <ToggleButton />
     </ProgressStyled>
   );
-}
-
-const formData = new FormData();
-formData.append(
-  "instructions",
-  JSON.stringify({
-    parts: [
-      {
-        html: "index.html",
-      },
-    ],
-  })
-);
-formData.append("index.html", fs.createReadStream("index.html"));
-(async () => {
-  try {
-    const response = await axios.post(
-      "https://api.pspdfkit.com/build",
-      formData,
-      {
-        headers: formData.getHeaders({
-          Authorization: "Bearer your_api_key_here",
-        }),
-        responseType: "stream",
-      }
-    );
-
-    response.data.pipe(fs.createWriteStream("result.pdf"));
-  } catch (e) {
-    const errorString = await streamToString(e.response.data);
-    console.log(errorString);
-  }
-})();
-
-function streamToString(stream) {
-  const chunks = [];
-  return new Promise((resolve, reject) => {
-    stream.on("data", (chunk) => chunks.push(Buffer.from(chunk)));
-    stream.on("error", (err) => reject(err));
-    stream.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
-  });
 }

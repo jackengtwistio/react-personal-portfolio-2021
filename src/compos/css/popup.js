@@ -13,7 +13,7 @@ export const PopupPageStyled = styled.div`
 `;
 
 export const CloseButtonStyled = styled.button`
-  top: 4em;
+  top: 50%;
   right: 2.5%;
   /* margin-right: */
   max-width: 5em;

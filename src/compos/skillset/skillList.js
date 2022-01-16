@@ -3,6 +3,7 @@ import Popup from "./details";
 import webImg from "./img/web.jpg";
 import Progress from "./progress";
 import { SkillCC } from "./context";
+import { AfterCertifCC } from "../../afterCertifContext";
 
 export default function SkillList() {
   return (
@@ -21,10 +22,16 @@ export default function SkillList() {
             </SkillStyled>
           ))}
           <Popup />
-          <Progress
-            max={Object.keys(correspondedImgs).length}
-            value={Object.keys(checkedSkill).length}
-          />
+          <AfterCertifCC>
+            {({ certifDeclared, setCertifDeclared }) => (
+              <Progress
+                max={Object.keys(correspondedImgs).length}
+                value={Object.keys(checkedSkill).length}
+                certifDeclared={certifDeclared}
+                setCertifDeclared={setCertifDeclared}
+              />
+            )}
+          </AfterCertifCC>
         </SkillListStyled>
       )}
     </SkillCC>

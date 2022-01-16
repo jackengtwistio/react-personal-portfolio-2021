@@ -4,14 +4,16 @@ export const ProgressStyled = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  border-radius: 3em;
-  color: black;
+  border-radius: 2em;
   z-index: 1;
-  padding: 0.5em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   progress {
     background-color: blue;
-    margin-left: 0.5em;
     transition: width 500ms ease-in-out;
+    margin: 0.2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    margin: auto;
+  }
+  &::after {
+    content: ${(e) => e.tailing};
   }
 `;
