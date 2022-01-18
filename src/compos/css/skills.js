@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { GridPicItem, GridPics } from "./grid";
 
 export const SkillsOuterStyled = styled.section`
-  color: rgb(216, 204, 189);
   padding: 0.5em;
   background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(20, 20, 20, 0.4)),
     url(${({ backgroundImg }) => backgroundImg}) top right;

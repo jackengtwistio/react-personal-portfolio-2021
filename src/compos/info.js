@@ -1,6 +1,7 @@
+import { GridItem, GridContainer } from "./css/grid";
 export default function Info() {
   return (
-    <div className="grid-text">
+    <GridContainer>
       <div className="personal">
         <p>name</p>
         <p>birth</p>
@@ -20,6 +21,6 @@ export default function Info() {
           aliquip ex ea commodo consequat.
         </p>
       </div>
-    </div>
+    </GridContainer>
   );
 }

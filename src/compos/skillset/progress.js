@@ -6,9 +6,10 @@ import {
   ToggleButtonStyled,
   HonorDivStyled,
 } from "../css/certif";
-import certImg from "./cert/certif.jpeg";
-import pdfDownload from "./cert/pdfDownload";
-
+import certImg from "./certif/certif.jpeg";
+import pdfDownload from "./certif/pdfDownload";
+import QueryForm from "./certif/queryForm";
+import { Consumer } from "../../Context.js";
 export default function Progress({
   max,
   value,
@@ -33,19 +34,28 @@ export default function Progress({
       <ProgressStyled progressFinished={true}>
         <HonorDivStyled>
           <CertifClaimStyled>
-            <span>
-              {}'s name is verified. Coursera certifies their successful
-              completion of Python Classes and Inheritance
-            </span>
-            <br />
-            <img
-              src={certImg}
-              alt="certification"
-              onClick={() => {
-                pdfDownload();
-              }}
-            />
+            <Consumer>
+              {(e) => (
+                <>
+                  <span>
+                    {}'s name is verified. Coursera certifies their successful
+                    completion of Python Classes and Inheritance
+                  </span>
+                  <br />
+                  <img
+                    src={certImg}
+                    alt="certification"
+                    onClick={() => {
+                      e.setCertifClicked(true);
+                      e.setWindowPopingup(true);
+                    }}
+                  />
+                </>
+              )}
+            </Consumer>
+
             <ToggleButton />
+            <QueryForm />
           </CertifClaimStyled>
         </HonorDivStyled>
       </ProgressStyled>
@@ -56,21 +66,28 @@ export default function Progress({
       <ProgressStyled progressFinished={true}>
         <HonorDivStyled>
           <CertifClaimStyled>
-            <i>
+            <b>
               Congratulations! you have successfully completed Jack's resume!
-            </i>
+            </b>
 
             <progress id="file" max={max} value={value} />
-            <SpinningStyled
-              onClick={async () => {
-                await pdfDownload();
-                setCertifDeclared(true);
-              }}
-            >
-              <br />
-              <br />
-              <img src={certImg} alt="certification" />
-            </SpinningStyled>
+            <Consumer>
+              {(e) => (
+                <>
+                  <SpinningStyled
+                    onClick={() => {
+                      e.setCertifClicked(true);
+                      e.setWindowPopingup(true);
+                    }}
+                  >
+                    <br />
+                    <img src={certImg} alt="certification" />
+                  </SpinningStyled>
+                  {e.certifClicked && <QueryForm />}
+                </>
+              )}
+            </Consumer>
+
             <i>you can declare your certification by clicking it!</i>
           </CertifClaimStyled>
         </HonorDivStyled>

@@ -3,7 +3,7 @@ import Popup from "./details";
 import webImg from "./img/web.jpg";
 import Progress from "./progress";
 import { SkillCC } from "./context";
-import { AfterCertifCC } from "../../afterCertifContext";
+import { Consumer } from "../../Context";
 
 export default function SkillList() {
   return (
@@ -11,27 +11,28 @@ export default function SkillList() {
       {({ setFocusedBg, correspondedImgs, setPopupItem, checkedSkill }) => (
         <SkillListStyled>
           {Object.keys(correspondedImgs).map((e, i) => (
-            <SkillStyled
-              key={i}
-              onClick={() => setPopupItem(e)}
-              onMouseEnter={() => setFocusedBg(correspondedImgs[e])}
-              onMouseLeave={() => setFocusedBg(webImg)}
-              backgroundImg={correspondedImgs[e] || webImg}
-            >
-              <h2>{e}</h2>
-            </SkillStyled>
+            <Consumer>
+              {(prop) => (
+                <SkillStyled
+                  key={i}
+                  onClick={() => {
+                    setPopupItem(e);
+                    prop.setWindowPopingup(true);
+                  }}
+                  onMouseEnter={() => setFocusedBg(correspondedImgs[e])}
+                  onMouseLeave={() => setFocusedBg(webImg)}
+                  backgroundImg={correspondedImgs[e] || webImg}
+                >
+                  <h2>{e}</h2>
+                </SkillStyled>
+              )}
+            </Consumer>
           ))}
           <Popup />
-          <AfterCertifCC>
-            {({ certifDeclared, setCertifDeclared }) => (
-              <Progress
-                max={Object.keys(correspondedImgs).length}
-                value={Object.keys(checkedSkill).length}
-                certifDeclared={certifDeclared}
-                setCertifDeclared={setCertifDeclared}
-              />
-            )}
-          </AfterCertifCC>
+          <Progress
+            max={Object.keys(correspondedImgs).length}
+            value={Object.keys(checkedSkill).length}
+          />
         </SkillListStyled>
       )}
     </SkillCC>

@@ -1,25 +1,26 @@
 import React from "react";
-import "./App.css";
+import { AppStyled } from "./compos/css/app";
 import Info from "./compos/info";
 import SkillOuter from "./compos/skillset/";
 import Jobs from "./compos/jobs";
 import HowDid from "./compos/howdid";
-import { AfterCertifCP, AfterCertifCC } from "./afterCertifContext";
+import { Provider, Consumer } from "./Context";
 
 function App() {
   return (
-    <AfterCertifCP>
-      <AfterCertifCC>
-        {({ certifDeclared }) => (
-          <div style={certifDeclared ? { color: "rgba(255, 215, 0)" } : null}>
+    <Provider>
+      <Consumer>
+        {({ certifDeclared, windowPopingup }) => (
+          <AppStyled certifDeclared={certifDeclared}>
+            {windowPopingup && <div className="overlay" />}
             <Info />
             <SkillOuter />
             <Jobs />
             <HowDid />
-          </div>
+          </AppStyled>
         )}
-      </AfterCertifCC>
-    </AfterCertifCP>
+      </Consumer>
+    </Provider>
   );
 }
 

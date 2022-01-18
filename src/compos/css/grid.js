@@ -26,3 +26,17 @@ export const GridPics = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 `;
+
+export const GridContainer = styled.div`
+  padding: 5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1em;
+`;
+
+export const GridItem = styled.div`
+  background-color: rgba(185, 46, 46, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-self: center;
+`;

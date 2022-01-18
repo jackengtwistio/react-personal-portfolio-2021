@@ -7,6 +7,7 @@ export const SpinningStyled = styled.div`
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+
   &:hover {
     cursor: pointer;
   }

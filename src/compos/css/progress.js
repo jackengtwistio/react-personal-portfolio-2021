@@ -5,7 +5,7 @@ export const ProgressStyled = styled.div`
   top: 0;
   right: 0;
   border-radius: 2em;
-  z-index: 1;
+  z-index: 5;
   progress {
     background-color: blue;
     transition: width 500ms ease-in-out;

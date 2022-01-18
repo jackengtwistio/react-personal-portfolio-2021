@@ -1,8 +1,9 @@
 import pic from "./skillset/img/about-AI.jpg";
+import { HowDidStyled } from "./css/howDid";
 
 export default function HowDid() {
   return (
-    <section className="how-did">
+    <HowDidStyled>
       <h2 className="how-title">Online 'Community Taught' Developer</h2>
       <p className="how-subtitle">
         I'm proud to share how I learned from online community
@@ -27,6 +28,6 @@ export default function HowDid() {
         alt="a simple web page template I built after one month of html and css learning"
         className="how-img"
       />
-    </section>
+    </HowDidStyled>
   );
 }

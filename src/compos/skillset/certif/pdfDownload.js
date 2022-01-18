@@ -2,16 +2,17 @@ import { PDFDocument, rgb } from "pdf-lib";
 import download from "downloadjs";
 import certifTemplate from "./certifTemplate.pdf";
 
-export default async function PdfDownload() {
-  const existingPdfBytes = await fetch(certifTemplate).then((res) =>
-    res.arrayBuffer()
+export default async function pdfDownload(userName = "humanBean") {
+  const existingPdfBytes = await fetch(certifTemplate)
+    .then((res) => res.arrayBuffer())
+    .catch((err) => console.error(err));
+
+  const pdfDoc = await PDFDocument.load(existingPdfBytes).catch((err) =>
+    console.error(err)
   );
-  const userName = prompt("Enter your name please");
-  const pdfDoc = await PDFDocument.load(existingPdfBytes);
+
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
-  const { width, height } = firstPage.getSize();
-  console.log(`width:${width} height:${height}`);
   const d = new Date();
   const date = d.toDateString();
   firstPage.drawText(userName, {
@@ -27,5 +28,5 @@ export default async function PdfDownload() {
     color: rgb(1, 215 / 255, 0),
   });
   const pdfBytes = await pdfDoc.save();
-  download(pdfBytes, "pdf-lib_creation_example.pdf", "application/pdf");
+  download(pdfBytes, `${userName}' certification`, "application/pdf");
 }

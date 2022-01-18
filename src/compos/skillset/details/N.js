@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import pic from "../cert/py-class-inheritance.png";
+import pic from "../certif/py-class-inheritance.png";
 import { GridPicItem, GridPics } from "../../css/grid";
 import { PopupPageStyled } from "../../css/popup";
 

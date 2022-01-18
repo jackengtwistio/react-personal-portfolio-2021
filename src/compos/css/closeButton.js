@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CloseButtonStyled = styled.button`
   border-radius: 50%;
+  margin: 1em;
   padding: 0.5em;
   width: 30px;
   height: 30px;
