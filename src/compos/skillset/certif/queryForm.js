@@ -35,7 +35,7 @@ export default function QueryForm() {
         <div className="content">
           <p>
             Dear {e.userName}, you may confirm that you want to download the
-            certification again{" "}
+            certification (pdf){" "}
           </p>
         </div>
         <div className="toggle">
@@ -79,7 +79,6 @@ export default function QueryForm() {
                 &#43;
               </span>
             </div>
-
             <h2>Modal title</h2>
             {nameConfirmed || e.userName ? (
               <ConfirmAgain e={{ ...e }} />

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { GridPics } from "./grid";
 
 export const PopupPageStyled = styled.div`
   position: fixed;
@@ -30,7 +29,12 @@ export const CloseButtonStyled = styled.button`
   }
 `;
 
-export const QueryFormStyled = styled(PopupPageStyled)`
+export const QueryFormStyled = styled.div`
+  position: fixed;
+  z-index: 4;
+  left: 30%;
+  right: 30%;
+  min-width: 400px;
   h2 {
     margin-top: 0px;
     color: #4d5c6e;
@@ -73,7 +77,7 @@ export const QueryFormStyled = styled(PopupPageStyled)`
   }
   .modal {
     position: relative;
-    width: 600px;
+    width: 100%;
     height: 330px;
     background-color: #fff;
     .content {
@@ -96,7 +100,7 @@ export const QueryFormStyled = styled(PopupPageStyled)`
       }
     }
     .toggle {
-      width: 600px;
+      width: 100%;
       position: absolute;
       bottom: 0;
       height: 50px;
@@ -128,7 +132,7 @@ export const QueryFormStyled = styled(PopupPageStyled)`
     }
   }
 
-  .modalbttn {
+  /* .modalbttn {
     background-color: #24252a;
     padding: 12px 25px;
     text-transform: uppercase;
@@ -139,5 +143,5 @@ export const QueryFormStyled = styled(PopupPageStyled)`
     &:hover {
       background-color: lighten(#24252a, 3%);
     }
-  }
+  } */
 `;
