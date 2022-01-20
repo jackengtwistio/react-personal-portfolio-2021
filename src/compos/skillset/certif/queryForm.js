@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { QueryFormStyled } from "../../css/popup";
+import { SkillCC } from "../context";
 import { Consumer } from "../../../Context";
 import pdfDownload from "./pdfDownload";
 export default function QueryForm() {
@@ -19,9 +20,7 @@ export default function QueryForm() {
         />
         <button
           onClick={() => {
-            console.log(e.userName);
             e.setUserName(name);
-            console.log(e.userName);
             setNameConfirmed(true);
           }}
         >
@@ -42,21 +41,25 @@ export default function QueryForm() {
         <div className="toggle">
           <span
             onClick={() => {
-              e.setWindowPopingup(false);
               e.setCertifClicked(false);
             }}
           >
             Cancel
           </span>
-          <span
-            onClick={() => {
-              e.setCertifClicked(false);
-              e.setWindowPopingup(false);
-              pdfDownload(e.userName).then(() => e.setCertifDeclared(true));
-            }}
-          >
-            Accept
-          </span>
+          <Consumer>
+            {(props) => (
+              <span
+                onClick={() => {
+                  e.setCertifClicked(false);
+                  pdfDownload(e.userName).then(() =>
+                    props.setCertifDeclared(true)
+                  );
+                }}
+              >
+                Accept
+              </span>
+            )}
+          </Consumer>
         </div>
       </>
     );
@@ -71,7 +74,6 @@ export default function QueryForm() {
               <span
                 onClick={() => {
                   e.setCertifClicked(false);
-                  e.setWindowPopingup(false);
                 }}
               >
                 &#43;
@@ -91,13 +93,13 @@ export default function QueryForm() {
   }
   return (
     <QueryFormStyled>
-      <Consumer>
+      <SkillCC>
         {(e) => {
           if (e.certifClicked) {
             return <QueryPage e={{ ...e }} userName={e.userName} />;
           }
         }}
-      </Consumer>
+      </SkillCC>
     </QueryFormStyled>
   );
 }

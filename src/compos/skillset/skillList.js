@@ -3,35 +3,34 @@ import Popup from "./details";
 import webImg from "./img/web.jpg";
 import Progress from "./progress";
 import { SkillCC } from "./context";
-import { Consumer } from "../../Context";
 
 export default function SkillList() {
+  function Skill({ e, skillTitle }) {
+    return (
+      <SkillStyled
+        onClick={() => {
+          e.setPopupSkill(skillTitle);
+        }}
+        onMouseEnter={() => e.setFocusedBg(e.correspondedImgs[skillTitle])}
+        onMouseLeave={() => e.setFocusedBg(webImg)}
+        backgroundImg={e.correspondedImgs[skillTitle] || webImg}
+      >
+        <h2>{skillTitle}</h2>
+      </SkillStyled>
+    );
+  }
   return (
     <SkillCC>
-      {({ setFocusedBg, correspondedImgs, setPopupItem, checkedSkill }) => (
+      {(e) => (
         <SkillListStyled>
-          {Object.keys(correspondedImgs).map((e, i) => (
-            <Consumer>
-              {(prop) => (
-                <SkillStyled
-                  key={i}
-                  onClick={() => {
-                    setPopupItem(e);
-                    prop.setWindowPopingup(true);
-                  }}
-                  onMouseEnter={() => setFocusedBg(correspondedImgs[e])}
-                  onMouseLeave={() => setFocusedBg(webImg)}
-                  backgroundImg={correspondedImgs[e] || webImg}
-                >
-                  <h2>{e}</h2>
-                </SkillStyled>
-              )}
-            </Consumer>
+          {Object.keys(e.correspondedImgs).map((skillTitle) => (
+            <Skill key={skillTitle} e={e} skillTitle={skillTitle} />
           ))}
-          <Popup />
+          {e.popupSkill && <Popup />}
           <Progress
-            max={Object.keys(correspondedImgs).length}
-            value={Object.keys(checkedSkill).length}
+            max={Object.keys(e.correspondedImgs).length}
+            value={Object.keys(e.checkedSkill).length}
+            certifDeclared={e.certifDeclared}
           />
         </SkillListStyled>
       )}

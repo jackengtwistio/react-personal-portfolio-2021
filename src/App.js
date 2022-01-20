@@ -10,9 +10,8 @@ function App() {
   return (
     <Provider>
       <Consumer>
-        {({ certifDeclared, windowPopingup }) => (
-          <AppStyled certifDeclared={certifDeclared}>
-            {windowPopingup && <div className="overlay" />}
+        {(e) => (
+          <AppStyled certifDeclared={e.certifDeclared}>
             <Info />
             <SkillOuter />
             <Jobs />

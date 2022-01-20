@@ -1,24 +1,18 @@
 import { SkillCC } from "../context";
 import { CloseButtonStyled } from "../../css/popup";
-import { Consumer } from "../../../Context";
 export default function Popup() {
   return (
     <SkillCC>
       {(e) => {
-        const SelectedItem = e.CorrespondedPages[e.popupItem];
+        const SelectedItem = e.CorrespondedPages[e.popupSkill];
         if (SelectedItem) {
           return (
             <SelectedItem setCheckedSkill={e.setCheckedSkill}>
-              <Consumer>
-                {(props) => (
-                  <CloseButtonStyled
-                    onClick={() => {
-                      e.setPopupItem("");
-                      props.setWindowPopingup(false);
-                    }}
-                  />
-                )}
-              </Consumer>
+              <CloseButtonStyled
+                onClick={() => {
+                  e.setPopupSkill("");
+                }}
+              />
             </SelectedItem>
           );
         }

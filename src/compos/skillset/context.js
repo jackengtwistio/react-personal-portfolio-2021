@@ -21,14 +21,20 @@ function SkillCP(props) {
     Networking: networkingImg,
     "Data Manipulation": dmImg,
   };
+  const [certifClicked, setCertifClicked] = useState(false);
+  const [userName, setUserName] = useState("");
   const [focusedBg, setFocusedBg] = useState(webImg);
-  const [popupItem, setPopupItem] = useState("");
+  const [popupSkill, setPopupSkill] = useState("");
   const [checkedSkill, setCheckedSkill] = useState({});
   const value = {
+    certifClicked,
+    setCertifClicked,
+    userName,
+    setUserName,
     focusedBg,
     setFocusedBg,
-    popupItem,
-    setPopupItem,
+    popupSkill,
+    setPopupSkill,
     correspondedImgs,
     CorrespondedPages,
     checkedSkill,

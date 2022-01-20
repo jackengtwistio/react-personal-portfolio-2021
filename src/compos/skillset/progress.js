@@ -9,13 +9,8 @@ import {
 import certImg from "./certif/certif.jpeg";
 import pdfDownload from "./certif/pdfDownload";
 import QueryForm from "./certif/queryForm";
-import { Consumer } from "../../Context.js";
-export default function Progress({
-  max,
-  value,
-  setCertifDeclared,
-  certifDeclared,
-}) {
+import { SkillCC } from "./context";
+export default function Progress({ max, value, certifDeclared }) {
   const [close, setClose] = useState(false);
   function ToggleButton() {
     return (
@@ -34,7 +29,7 @@ export default function Progress({
       <ProgressStyled progressFinished={true}>
         <HonorDivStyled>
           <CertifClaimStyled>
-            <Consumer>
+            <SkillCC>
               {(e) => (
                 <>
                   <span>
@@ -47,12 +42,11 @@ export default function Progress({
                     alt="certification"
                     onClick={() => {
                       e.setCertifClicked(true);
-                      e.setWindowPopingup(true);
                     }}
                   />
                 </>
               )}
-            </Consumer>
+            </SkillCC>
 
             <ToggleButton />
             <QueryForm />
@@ -71,13 +65,12 @@ export default function Progress({
             </b>
 
             <progress id="file" max={max} value={value} />
-            <Consumer>
+            <SkillCC>
               {(e) => (
                 <>
                   <SpinningStyled
                     onClick={() => {
                       e.setCertifClicked(true);
-                      e.setWindowPopingup(true);
                     }}
                   >
                     <br />
@@ -86,7 +79,7 @@ export default function Progress({
                   {e.certifClicked && <QueryForm />}
                 </>
               )}
-            </Consumer>
+            </SkillCC>
 
             <i>you can declare your certification by clicking it!</i>
           </CertifClaimStyled>
