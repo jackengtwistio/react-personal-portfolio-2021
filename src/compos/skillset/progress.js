@@ -89,9 +89,7 @@ export default function Progress({ max, value, certifDeclared }) {
   }
   return (
     <ProgressStyled>
-      <label htmlFor="file" onClick={pdfDownload}>
-        Your progress:
-      </label>
+      <label htmlFor="file">Your progress:</label>
       <br />
       <progress id="file" max={max} value={value} />
     </ProgressStyled>

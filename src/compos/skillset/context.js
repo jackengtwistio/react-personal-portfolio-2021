@@ -26,7 +26,10 @@ function SkillCP(props) {
   const [focusedBg, setFocusedBg] = useState(webImg);
   const [popupSkill, setPopupSkill] = useState("");
   const [checkedSkill, setCheckedSkill] = useState({});
+  const [certifDeclared, setCertifDeclared] = useState(false);
   const value = {
+    certifDeclared,
+    setCertifDeclared,
     certifClicked,
     setCertifClicked,
     userName,

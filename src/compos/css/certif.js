@@ -1,24 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { CloseButtonStyled } from "./closeButton";
+
+const rotate = keyframes`
+from{transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+`;
+
 export const SpinningStyled = styled.div`
   margin: auto;
   max-width: 100px;
-  animation-name: spin;
-  animation-duration: 5000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 
+  animation: 2s ${rotate} linear infinite;
   &:hover {
-    cursor: pointer;
-  }
-
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+    cursor: grab;
   }
 `;
 

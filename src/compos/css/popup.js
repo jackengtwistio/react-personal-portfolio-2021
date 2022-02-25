@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import { CloseButtonStyled } from "./closeButton";
 
 export const PopupPageStyled = styled.div`
+  a {
+    color: silver;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  }
+  color: white;
   position: fixed;
   z-index: 4;
   bottom: 10%;
@@ -8,25 +14,16 @@ export const PopupPageStyled = styled.div`
   left: 10%;
   right: 10%;
   overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
   /* contain: content; */
 `;
 
-export const CloseButtonStyled = styled.button`
-  top: 50%;
-  right: 2.5%;
-  max-width: 5em;
+export const BigCloseButtonStyled = styled(CloseButtonStyled)`
+  bottom: 10%;
+  right: 10%;
   z-index: 5;
   position: fixed;
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 2%;
-
-  cursor: pointer;
-
-  &:hover {
-    background-color: RoyalBlue;
-  }
 `;
 
 export const QueryFormStyled = styled.div`

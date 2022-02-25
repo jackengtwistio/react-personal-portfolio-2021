@@ -9,7 +9,7 @@ export default function QueryForm() {
   function QueryName({ e }) {
     const [name, setName] = useState("");
     return (
-      <div>
+      <form>
         <p>the certification can be downloaded once you confirm your name</p>
         <br />
         <input
@@ -26,7 +26,7 @@ export default function QueryForm() {
         >
           confirm
         </button>
-      </div>
+      </form>
     );
   }
   function ConfirmAgain({ e }) {
@@ -51,9 +51,10 @@ export default function QueryForm() {
               <span
                 onClick={() => {
                   e.setCertifClicked(false);
-                  pdfDownload(e.userName).then(() =>
-                    props.setCertifDeclared(true)
-                  );
+                  pdfDownload(e.userName).then(() => {
+                    props.setCertifDeclared(true);
+                    e.setCertifDeclared(true);
+                  });
                 }}
               >
                 Accept

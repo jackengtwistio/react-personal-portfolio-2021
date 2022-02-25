@@ -1,5 +1,5 @@
 import { SkillCC } from "../context";
-import { CloseButtonStyled } from "../../css/popup";
+import { BigCloseButtonStyled } from "../../css/popup";
 export default function Popup() {
   return (
     <SkillCC>
@@ -8,7 +8,7 @@ export default function Popup() {
         if (SelectedItem) {
           return (
             <SelectedItem setCheckedSkill={e.setCheckedSkill}>
-              <CloseButtonStyled
+              <BigCloseButtonStyled
                 onClick={() => {
                   e.setPopupSkill("");
                 }}
