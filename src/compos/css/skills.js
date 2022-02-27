@@ -6,6 +6,10 @@ export const SkillsOuterStyled = styled.section`
   background: linear-gradient(rgba(20, 20, 20, 0.4), rgba(20, 20, 20, 0.4)),
     url(${({ backgroundImg }) => backgroundImg}) top right;
   background-size: cover;
+  h2 {
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+      1px 1px 0 white;
+  }
   &:after {
     content: "<h1>Dev</h1>";
   }

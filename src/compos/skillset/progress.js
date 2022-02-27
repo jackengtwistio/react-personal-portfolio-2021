@@ -7,7 +7,6 @@ import {
   HonorDivStyled,
 } from "../css/certif";
 import certImg from "./certif/certif.jpeg";
-import pdfDownload from "./certif/pdfDownload";
 import QueryForm from "./certif/queryForm";
 import { SkillCC } from "./context";
 export default function Progress({ max, value, certifDeclared }) {
@@ -42,14 +41,15 @@ export default function Progress({ max, value, certifDeclared }) {
                     alt="certification"
                     onClick={() => {
                       e.setCertifClicked(true);
+                      e.getTimeLasted();
                     }}
                   />
+                  {e.certifClicked && <QueryForm />}
                 </>
               )}
             </SkillCC>
 
             <ToggleButton />
-            <QueryForm />
           </CertifClaimStyled>
         </HonorDivStyled>
       </ProgressStyled>
@@ -71,6 +71,12 @@ export default function Progress({ max, value, certifDeclared }) {
                   <SpinningStyled
                     onClick={() => {
                       e.setCertifClicked(true);
+                      e.correspondedAcronym[e.popupSkill] &&
+                        e.timeTaker(
+                          new Date(),
+                          e.correspondedAcronym[e.popupSkill],
+                          true
+                        );
                     }}
                   >
                     <br />

@@ -24,7 +24,7 @@ export default function DM({ setCheckedSkill, children }) {
             <GridPicItem backgroundImg={pic} />
             <GridPicItem backgroundImg={pic} />
             <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
+
             <GridPicItem backgroundImg={pic} />
             <GridPicItem backgroundImg={pic} />
             <GridPicItem backgroundImg={pic} />

@@ -14,9 +14,11 @@ export default function DM({ setCheckedSkill, children }) {
     <PopupPageStyled>
       {children}
       <div>
-        <Summary basic="data analysis, webscraping, general SQL, MongoDB, basic CRUD operation, data visualization, d3.js" />
-        <section>
-          <h2>more details</h2>
+        <fieldset>
+          <Summary
+            list="data analysis, webscraping, general SQL, MongoDB, basic CRUD operation, data visualization, d3.js"
+            title="Basic Knowledge"
+          />
           <GridContainer>
             <fieldset>
               <legend>webscraping</legend>
@@ -39,15 +41,29 @@ export default function DM({ setCheckedSkill, children }) {
             <fieldset>
               <legend>data visualization</legend>
               <p>d3 course completion from NYU and my finished homework</p>
+              <li>
+                <a href="https://jackengtwistio.github.io/airline_routes_d3js/">
+                  airline numbers between countries(d3 interactive html page)
+                </a>
+              </li>
+              <li>
+                <a href="https://public.tableau.com/views/new-york-cuisine/score-cuisine-monthly?:language=en-US&:display_count=n&:origin=viz_share_link">
+                  new york cuisine analisation using tableau
+                </a>
+              </li>
+              <GridPicItem backgroundImg={pic} />
+            </fieldset>
+            <fieldset>
+              <legend>analysis certification from google</legend>
+              <p>d3 course completion from NYU and my finished homework</p>
               <p>
-                <a href="https://github.com/jackengtwistio/airline_routes_d3js">
+                <a href="https://jackengtwistio.github.io/airline_routes_d3js/">
                   homework
                 </a>
               </p>
-              <GridPicItem backgroundImg={pic} />
             </fieldset>
           </GridContainer>
-        </section>
+        </fieldset>
       </div>
     </PopupPageStyled>
   );

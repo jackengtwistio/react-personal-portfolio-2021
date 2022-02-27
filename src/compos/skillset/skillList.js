@@ -10,6 +10,7 @@ export default function SkillList() {
       <SkillStyled
         onClick={() => {
           e.setPopupSkill(skillTitle);
+          e.timeTaker(new Date(), e.correspondedAcronym[skillTitle], false);
         }}
         onMouseEnter={() => e.setFocusedBg(e.correspondedImgs[skillTitle])}
         onMouseLeave={() => e.setFocusedBg(webImg)}

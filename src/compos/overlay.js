@@ -9,6 +9,11 @@ export default function Overlay() {
           <OverlayStyled
             onClick={() => {
               e.setCertifClicked(false);
+              e.timeTaker(
+                new Date(),
+                e.correspondedAcronym[e.popupSkill],
+                true
+              );
               e.setPopupSkill("");
             }}
           />

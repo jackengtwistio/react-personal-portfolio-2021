@@ -22,6 +22,7 @@ export default function QueryForm() {
           onClick={() => {
             e.setUserName(name);
             setNameConfirmed(true);
+            e.getTimeLasted();
           }}
         >
           confirm
@@ -51,7 +52,7 @@ export default function QueryForm() {
               <span
                 onClick={() => {
                   e.setCertifClicked(false);
-                  pdfDownload(e.userName).then(() => {
+                  pdfDownload(e.userName, e.lastedTime).then(() => {
                     props.setCertifDeclared(true);
                     e.setCertifDeclared(true);
                   });
@@ -75,6 +76,7 @@ export default function QueryForm() {
               <span
                 onClick={() => {
                   e.setCertifClicked(false);
+                  console.log("close clicked");
                 }}
               >
                 &#43;
@@ -94,11 +96,7 @@ export default function QueryForm() {
   return (
     <QueryFormStyled>
       <SkillCC>
-        {(e) => {
-          if (e.certifClicked) {
-            return <QueryPage e={{ ...e }} userName={e.userName} />;
-          }
-        }}
+        {(e) => <QueryPage e={{ ...e }} userName={e.userName} />}
       </SkillCC>
     </QueryFormStyled>
   );
