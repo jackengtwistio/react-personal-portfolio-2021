@@ -148,11 +148,9 @@ export default function HowDid() {
           </p>
         </div>
 
-        <img
-          src={pic}
-          alt="a simple web page template I built after one month of html and css learning"
-          className="how-img"
-        />
+        <a href="https://github.com/jackengtwistio/jack" className="how-img">
+          <img src={pic} alt="source code from github" />
+        </a>
       </div>
     </HowDidStyled>
   );

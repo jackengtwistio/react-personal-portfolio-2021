@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HowDidStyled = styled.section`
   position: relative;
-  color: #e7eff9;
+  color: white;
   .webs-map {
     filter: brightness(99%);
     transform: scale(${(e) => e.scale});
@@ -14,8 +14,7 @@ export const HowDidStyled = styled.section`
     .webs-map {
       transform: scale(${(e) => e.scale});
       top: ${(e) =>
-        e.mapTop +
-        50}px; //do not understanding why without 50 it would not work
+        e.mapTop}px; //do not understanding why without +50px  it would not work
       left: ${(e) => e.left}px;
     }
     margin: auto;

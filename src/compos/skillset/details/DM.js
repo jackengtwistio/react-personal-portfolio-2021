@@ -1,82 +1,72 @@
-import { useEffect } from "react";
 import nyu from "./pic/dm/nyu-combined.pdf";
 import google from "./pic/dm/google-combined.pdf";
-import { GridPicItem, GridPics, GridItem, GridContainer } from "../../css/grid";
+import GPy from "./pic/dm/GPy1.pdf";
+import pyFFD from "./pic/dm/GPy1.pdf";
+import pyDStruc from "./pic/dm/pyDStruc.pdf";
+import pyDC from "./pic/dm/pyDC.pdf";
+import pyClassInh from "./pic/dm/pyClassInh.pdf";
+import pyIBM from "./pic/dm/pyIBM.pdf";
 import { PopupPageStyled } from "../../css/popup";
+import { GridContainer, Title } from "./compos";
 
-export default function DM({ setCheckedSkill, children }) {
-  useEffect(() => {
-    setCheckedSkill((prev) => ({ ...prev, DM: "DM" }));
-    return () => {};
-  }, []);
-
+export default function DM({ children }) {
   return (
     <PopupPageStyled>
       {children}
-      <h3>Data Manipulation</h3>
+      <Title
+        intro="GridPicStyled,
+PicContainerStyled,
+GridStyled,
+GridContainerStyled,
+ObjContainerStyled,
+GridObjStyled,"
+        title="Data Manipulation"
+      />
 
-      <h4>Data Visualization</h4>
-      <p>
-        Data visualization course completion from NYU and my finished homeworks
-      </p>
-      <GridContainer>
-        <GridPicItem>
-          <object data={nyu} type="application/pdf" width="100%" height="100%">
-            <a href="https://www.udemy.com/certificate/UC-d053c984-d018-4a74-8e87-edd22fd744b7">
-              certificate source
-            </a>
-          </object>
-        </GridPicItem>
-        <GridPicItem>
-          <li>
-            <a href="https://jackengtwistio.github.io/airline_routes_d3js/">
-              airline network links between countries(d3 interactive html page)
-            </a>
-          </li>
-          <iframe
-            src="https://jackengtwistio.github.io/airline_routes_d3js/"
-            title="description"
-            style={{ height: "100%", width: "100%" }}
-          ></iframe>
-        </GridPicItem>
-      </GridContainer>
-
-      <h4>analysis certification from google</h4>
-      <p>
-        Data visualization course completion from NYU and my finished homework
-      </p>
-      <GridContainer>
-        <GridPicItem>
-          <object
-            data={google}
-            type="application/pdf"
-            width="100%"
-            height="100%"
-          >
-            <a href="https://www.udemy.com/certificate/UC-d053c984-d018-4a74-8e87-edd22fd744b7">
-              certificate source
-            </a>
-          </object>
-        </GridPicItem>
-      </GridContainer>
-      <h4>webscraping</h4>
-      <p>mini programs use puppeteer to extract data from some website:</p>
-      <GridPics>
-        <GridPicItem>
-          <ul>
-            <li>
-              <a href="https://github.com/jackengtwistio/webScrapper/blob/main/craigslist-puppeteer.js">
-                getting a list of jobs from craigslist
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/jackengtwistio/webScrapper/blob/main/hackr-puppeteer.js">
-                getting a list of course reviews from hackrio
-              </a>
-            </li>
-          </ul>
-        </GridPicItem>
-      </GridPics>
+      <GridContainer
+        items={[{ url: google }]}
+        type="application/pdf"
+        subtitle="Data Analysis"
+        caption="the data analysis courses certified by Google I have completed"
+      />
+      <GridContainer
+        items={[{ url: nyu }]}
+        type="application/pdf"
+        subtitle="Data Visualization"
+        caption="Data visualization course completion from NYU"
+      />
+      <GridContainer
+        items={[
+          {
+            url: "https://jackengtwistio.github.io/airline_routes_d3js/",
+            description: "github io",
+          },
+        ]}
+        type="text/html"
+        subtitle="D3.js"
+        caption="airline network links between countries(d3 interactive html page)"
+      />
+      <GridContainer
+        items={[{ url: GPy }, { url: pyFFD },{url:pyDStruc},{url:pyDC},{url:pyClassInh},{url:pyIBM}]}
+        type="application/pdf"
+        subtitle="Python"
+        caption="basic python courses I've completed "
+      />
+      <GridContainer
+        items={[
+          {
+            url: "https://github.com/jackengtwistio/webScrapper/blob/main/craigslist-puppeteer.js",
+            description: "getting a list of jobs from craigslist",
+          },
+          {
+            url: "https://github.com/jackengtwistio/webScrapper/blob/main/hackr-puppeteer.js",
+            description: "getting a list of course reviews from hackrio",
+          },
+        ]}
+        type="text/html"
+        subtitle="Webscraping"
+        caption="mini programs use puppeteer to scrap data from some website"
+      />
     </PopupPageStyled>
   );
 }

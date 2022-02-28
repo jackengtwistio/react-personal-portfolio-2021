@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { GridPicItem, GridPics } from "./grid";
+import styled from "styled-components";
 
 export const SkillsOuterStyled = styled.section`
   padding: 0.5em;

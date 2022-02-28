@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import DM from "./details/DM";
 import N from "./details/N";
 import JS from "./details/JS";
@@ -30,7 +29,6 @@ function SkillCP(props) {
     let timeCalculated = {};
     for (let item in endTime) {
       timeCalculated[item] = endTime[item].getTime() - initTime[item].getTime();
-      console.log(endTime);
     }
     setlastedTime({
       ...timeCalculated,

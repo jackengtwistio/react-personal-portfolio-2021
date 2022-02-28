@@ -1,9 +1,9 @@
-import { GridItem, GridContainer } from "./css/grid";
+import { GridTextStyled, TextContainerStyled } from "./css/grid";
 
 function Job(props) {
   const { title, periode, company, description, learned } = props;
   return (
-    <GridItem>
+    <GridTextStyled>
       <div>
         <h4>{title}</h4>
         <small>{periode}</small>
@@ -14,13 +14,13 @@ function Job(props) {
       <p>{description}</p>
       <h5>What I learned:</h5>
       <p>{learned}</p>
-    </GridItem>
+    </GridTextStyled>
   );
 }
 
 export default function Jobs() {
   return (
-    <GridContainer>
+    <TextContainerStyled>
       <Job
         title="Office Assistent"
         periode="11/2018--4/2019"
@@ -39,6 +39,6 @@ export default function Jobs() {
         learned="alsdfhablsjdf hbchfqules 31.3 KiB 15 modules
       ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??r"
       />
-    </GridContainer>
+    </TextContainerStyled>
   );
 }

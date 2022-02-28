@@ -1,7 +1,7 @@
 import { StandardFonts, PDFDocument, rgb } from "pdf-lib";
 import download from "downloadjs";
 
-let geoAPI = "https://api.bigdatacloud.net/data/reverse-geocode-client";
+const geoAPI = "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 export default async function pdfDownload(
   userName = "humanBean",
