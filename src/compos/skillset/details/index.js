@@ -10,6 +10,7 @@ export default function Popup() {
             <SelectedItem setCheckedSkill={e.setCheckedSkill}>
               <BigCloseButtonStyled
                 onClick={() => {
+                  e.timeTaker(new Date(), e.popupSkill, true);
                   e.setPopupSkill("");
                 }}
               />

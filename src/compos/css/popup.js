@@ -10,15 +10,26 @@ export const PopupPageStyled = styled.div`
     padding: 0.3em;
   }
 
-  color: white;
+  h4 {
+    margin-bottom: -0.5em;
+    padding-top: 2em;
+    position: relative;
+  }
+  p {
+    margin-bottom: -1.5em;
+  }
+  object {
+    overflow: hidden;
+  }
+  overflow: auto;
   position: fixed;
   z-index: 4;
   bottom: 10%;
   top: 10%;
-  left: 10%;
-  right: 10%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  left: 5%;
+  right: 5%;
+  padding: 1em;
+  background-color: #e7eff9;
   border-radius: 1em;
   /* contain: content; */
 `;
@@ -59,6 +70,7 @@ export const QueryFormStyled = styled.div`
     border-radius: 2em;
     padding: 12px 36px;
     margin-left: -96px;
+
     &:hover {
       background: darken(#7f8ff4, 4%);
     }
@@ -132,17 +144,111 @@ export const QueryFormStyled = styled.div`
       }
     }
   }
+`;
 
-  /* .modalbttn {
-    background-color: #24252a;
-    padding: 12px 25px;
-    text-transform: uppercase;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 4px;
+export const TitleStyled = styled.div`
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    width: 300px;
+    padding: 20px 30px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    overflow: hidden;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+      0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+      0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+      0 20px 20px rgba(0, 0, 0, 0.15);
     &:hover {
-      background-color: lighten(#24252a, 3%);
+      div {
+        top: -120px;
+      }
     }
-  } */
+
+    span {
+      position: relative;
+      z-index: 1;
+      font-size: 40px;
+      letter-spacing: 8px;
+    }
+
+    div {
+      width: 400px;
+      height: 300px;
+      background-color: #006994;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      top: -80px;
+      transition: 0.4s;
+
+      &::before,
+      &::after {
+        width: 200%;
+        height: 200%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -75%);
+      }
+
+      &::before {
+        border-radius: 45%;
+        background-color: #e7eff9;
+        animation: wave 5s linear infinite;
+      }
+
+      &::after {
+        border-radius: 40%;
+        background-color: #e7eff9;
+        animation: wave 10s linear infinite;
+      }
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+`;
+
+export const BubbleStyled = styled.div`
+  position: fixed;
+  margin-left: -3em;
+  z-index: 2;
+  font-family: sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 20em;
+  background: #fff;
+  border-radius: 40px;
+  padding: 24px;
+  text-align: center;
+  color: #000;
+
+  &:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 24px solid #fff;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    left: 32px;
+    bottom: -24px;
+  }
 `;

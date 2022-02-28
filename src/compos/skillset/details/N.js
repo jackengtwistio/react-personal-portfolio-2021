@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import pic from "../certif/py-class-inheritance.png";
+
 import { GridPicItem, GridPics } from "../../css/grid";
 import { PopupPageStyled } from "../../css/popup";
 
@@ -16,21 +16,8 @@ export default function DM({ setCheckedSkill, children }) {
         <fieldset>
           <legend>Coursera Certificates and Projects</legend>
           <GridPics>
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
-            <GridPicItem backgroundImg={pic} />
+            <GridPicItem backgroundImg={""} />
+            <GridPicItem backgroundImg={""} />
           </GridPics>
         </fieldset>
       </div>

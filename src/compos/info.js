@@ -2,25 +2,26 @@ import { GridItem, GridContainer } from "./css/grid";
 export default function Info() {
   return (
     <GridContainer>
-      <div className="personal">
-        <p>name</p>
-        <p>birth</p>
-        <p>location</p>
+      <GridItem>
+        <p>name:Shuo Yang(jack)</p>
+        <p>location: New York City</p>
         <address>
-          <a href="mailto:jim@rock.com">jim@rock.com</a>
-          <br />
-          <a href="tel:+13115552368">(311) 555-2368</a>
+          <p>
+            <a href="mailto:jtwist108@gmail.com">email: jtwist108@gmail.com</a>
+          </p>
+          <p>
+            <a href="tel:+13474992944">cellphone: (347) 499-2944</a>
+          </p>
         </address>
-        <p>location</p>
-      </div>
-      <div className="intro">
+      </GridItem>
+      <GridItem>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-      </div>
+      </GridItem>
     </GridContainer>
   );
 }
