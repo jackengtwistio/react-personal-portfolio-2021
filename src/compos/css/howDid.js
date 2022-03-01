@@ -26,7 +26,7 @@ export const HowDidStyled = styled.section`
       display: grid;
       grid-template-columns: 0px 1fr 200px 0px;
       grid-template-areas:
-        ". title img. "
+        ". title . . "
         ". subtitle img ."
         ". text img .";
       grid-column-gap: 1em;
