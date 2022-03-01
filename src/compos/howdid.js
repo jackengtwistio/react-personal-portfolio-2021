@@ -131,24 +131,42 @@ export default function HowDid() {
       <div className="container">
         <h2 className="how-title">'Online Community' Taught Developer</h2>
         <p className="how-subtitle">
-          I'm proud to tell you how I learned from online community
+          proud to talk how I learned web development from online community
         </p>
         <div className="how-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            One big reason I chose to learn python and MERN stack JS is that
+            they have the most abundant learning recourses to begin with.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            After some basic computer science courses from Codecademy and Khan
+            Academy, I used 5 weeks(time subscripted) to watch all html css and
+            plain javascript from Treehouse, I gained the basic knowledge there
+            but couldn't build anything;
+          </p>
+          <p>
+            Then after some frustration with Pluralsight and Linkedin Learning,
+            <a href="https://scrimba.com/learn/frontend">Scrimba</a> saved me,
+            because their integrated and interactive coding environment, I could
+            easily code along
+          </p>
+          <p>
+            After some courses about nodejs on Udemy, I realized that I still
+            did't know anything about networking, so I got some courses based on
+            Comptia A+ from Udemy and courses of IT support from Google
+          </p>
+          <p>
+            Data manipulation is one of my passion, I believe every business all
+            can benefit from it. I finished data analisis from google and data
+            visualization from NYU, they are very helpful to me as a beginner.
           </p>
         </div>
 
-        <a href="https://github.com/jackengtwistio/jack" className="how-img">
+        <a
+          href="https://github.com/jackengtwistio/jack"
+          className="how-img"
+          title="source code on GitHub"
+        >
           <img src={pic} alt="source code from github" />
         </a>
       </div>

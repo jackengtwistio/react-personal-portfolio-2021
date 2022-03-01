@@ -8,12 +8,7 @@ export default function DM({ children }) {
     <PopupPageStyled>
       {children}
       <Title
-        intro="GridPicStyled,
-  PicContainerStyled,
-  GridStyled,
-  GridContainerStyled,
-  ObjContainerStyled,
-  GridObjStyled,dasfdfasdfasdfasdfasdfasdfasdfasdfasdfasdfa"
+        intro="React.js, Node.js, How to connect database"
         title="Javascript"
       />
 

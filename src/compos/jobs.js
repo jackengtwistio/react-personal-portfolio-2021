@@ -10,10 +10,12 @@ function Job(props) {
         <br />
         <small>{company}</small>
       </div>
-      <h5 style={{ justifySelf: "start" }}>Description:</h5>
+      <h5 style={{ justifySelf: "start" }}>Job Details:</h5>
       <p>{description}</p>
       <h5>What I learned:</h5>
-      <p>{learned}</p>
+      {learned.map((e) => (
+        <li>{e}</li>
+      ))}
     </GridTextStyled>
   );
 }
@@ -23,21 +25,23 @@ export default function Jobs() {
     <TextContainerStyled>
       <Job
         title="Office Assistent"
-        periode="11/2018--4/2019"
+        periode="10/2018--4/2019"
         company="Wuhan Technology and Business University"
-        description="alsdfhablsjdf hbchfqules 31.3 KiB 15 modules
-        ./node_modules/css-loader/dist/ms"
-        learned="alsdfhablsjdf hbchfqules 31.3 KiB 15 modules
-        ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??r"
+        description="Run errands between offices, Organize data using office toolset, help foreign professors with local languages."
+        learned={[
+          "be humble and let people know if I need help",
+          "write down tasks on calendar while accepting it",
+        ]}
       />
       <Job
-        title="Office Assistent"
-        periode="11/2018--4/2019"
-        company="Wuhan Technology and Business University"
-        description="alsdfhablsjdf hbchfqules 31.3 KiB 15 modules
-      ./node_modules/css-loader/dist/ms"
-        learned="alsdfhablsjdf hbchfqules 31.3 KiB 15 modules
-      ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??r"
+        title="team member"
+        periode="6/2019--9/2019"
+        company="Unlimited Biking"
+        description="Recommend bicycle rental and bicycle tour to tourists, Prepare and take back bicycle"
+        learned={[
+          "smile and politeness can never hurt",
+          "more working knowledge equals better performance",
+        ]}
       />
     </TextContainerStyled>
   );

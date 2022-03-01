@@ -14,12 +14,7 @@ export default function DM({ children }) {
     <PopupPageStyled>
       {children}
       <Title
-        intro="GridPicStyled,
-PicContainerStyled,
-GridStyled,
-GridContainerStyled,
-ObjContainerStyled,
-GridObjStyled,"
+        intro="Use python to interact with files, Puppeteer.js for basic webscrapping, D3.js & Tableau & Excel to analize and visualize data , Basic SQL, Regular Expression"
         title="Data Manipulation"
       />
 
@@ -47,7 +42,14 @@ GridObjStyled,"
         caption="airline network links between countries(d3 interactive html page)"
       />
       <GridContainer
-        items={[{ url: GPy }, { url: pyFFD },{url:pyDStruc},{url:pyDC},{url:pyClassInh},{url:pyIBM}]}
+        items={[
+          { url: GPy },
+          { url: pyFFD },
+          { url: pyDStruc },
+          { url: pyDC },
+          { url: pyClassInh },
+          { url: pyIBM },
+        ]}
         type="application/pdf"
         subtitle="Python"
         caption="basic python courses I've completed "

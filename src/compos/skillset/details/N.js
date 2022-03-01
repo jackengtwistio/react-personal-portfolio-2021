@@ -16,12 +16,7 @@ export default function DM({ children }) {
     <PopupPageStyled>
       {children}
       <Title
-        intro="GridPicStyled,
-PicContainerStyled,
-GridStyled,
-GridContainerStyled,
-ObjContainerStyled,
-GridObjStyled,"
+        intro="Basic OSI model, general computer trouble shooting, Basic networking"
         title="Computer Networking"
       />
       <GridContainer

@@ -17,6 +17,7 @@ export function Title({ intro, title }) {
           onMouseEnter={() => setBubble(true)}
           onMouseLeave={() => setBubble(false)}
         >
+          <h5>What I know:</h5>
           {intro}
         </BubbleStyled>
       )}
