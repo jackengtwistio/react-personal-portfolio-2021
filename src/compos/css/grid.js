@@ -40,8 +40,8 @@ export const GridContainerStyled = styled.div`
   border-radius: 1em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 0.5em 3em;
-  gap: 1em;
+  padding: 5em 3em;
+  gap: 2em;
   background-color: #e7eff9;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
