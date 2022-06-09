@@ -135,30 +135,25 @@ export default function HowDid() {
         </p>
         <div className="how-text">
           <p>
-            One big reason I chose to learn python and MERN stack JS is that
-            they have the most abundant learning recourses to begin with.
+            After two years of University education, I did not feel like I was
+            learning much, at the start of 2021 an old friend from USA offered
+            me enrollment at his bootcamp of web development.
           </p>
           <p>
-            After some basic computer science courses from Codecademy and Khan
-            Academy, I used 5 weeks(time subscripted) to watch all html css and
-            plain javascript from Treehouse, I gained the basic knowledge there
-            but couldn't build anything;
+            I learned a lot from this bootcamp and the lessons are in english,
+            my english advanced super fast because of that. now I can read tech
+            english documentation without trouble.
           </p>
           <p>
-            Then after some frustration with Pluralsight and Linkedin Learning,
-            <a href="https://scrimba.com/learn/frontend">Scrimba</a> saved me,
-            because their integrated and interactive coding environment, I could
-            easily code along
+            Along with the bootcamp trainning, I also used some online
+            rescources to assist with the training, like pluralsight, scrimba,
+            codecademy,linkedin, udemy, coursera. I learned a lot from them, I
+            have been using them since then.
           </p>
           <p>
-            After some courses about nodejs on Udemy, I realized that I still
-            did't know anything about networking, so I got some courses based on
-            Comptia A+ from Udemy and courses of IT support from Google
-          </p>
-          <p>
-            Data manipulation is one of my passion, I believe every business all
-            can benefit from it. I finished data analisis from google and data
-            visualization from NYU, they are very helpful to me as a beginner.
+            before I focused on fullstack web development, I touched the base of
+            data analysis and data visualization by using python,Excel,Tableau
+            by using online rescources.
           </p>
         </div>
 
